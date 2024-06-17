@@ -254,7 +254,22 @@ CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NA
 
 ***Questions:***
 
-1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** __Fill answer here__.
+1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** 
+```bash
+root@45dfee71646b:~# cd /root
+root@45dfee71646b:~# nano helloNice.txt
+root@45dfee71646b:~# cat helloNice.txt
+Hello nice people!
+root@45dfee71646b:~# ls -1 /root/helloNice.txt
+/root/helloNice.txt
+```
+The output /root/helloNice.txt can be broken down as follows:
+/root/helloNice.txt: This is the path to the file.
+Therefore, based on the provided information:
+User: root
+Group: root
+The file helloNice.txt is owned by the root user and belongs to the root group within the Docker container.
+
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
 
