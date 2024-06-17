@@ -155,8 +155,8 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 1. Are files in the container persistent. Why not?. ***(1 mark)*** <br />
 No, files in a container are not persistent because containers reset every time they run.
-2. Can we run two, or three instances of debian linux? . ***(1 mark)*** __Fill answer here__.
-
+2. Can we run two, or three instances of debian linux? . ***(1 mark)*** <br />
+Yes.
 ## Running your own container with persistent storage
 
 1. In the previous experiment, you might have notice that containers are not persistent. To make storage persistent, you will need to mount them. 
