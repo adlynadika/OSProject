@@ -272,10 +272,9 @@ The file helloNice.txt is owned by the root user and belongs to the root group w
 
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
-
-
+//use sudo and chown
+sudo chown -R codespace:codespace myroot
 ```
-*** __Fill answer here__.***
 
 ## You are on your own, create your own static webpage
 
