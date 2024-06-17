@@ -188,13 +188,26 @@ exit
 
 6. Stop the container and run **docker ps -a**, and restart the container again. Is your file in the container still available?
 ```bash 
-@adlynadika ➜ /workspaces/OSProject (main) $ docker stop loving_lamarr
-loving_lamarr
+@adlynadika ➜ /workspaces/OSProject (main) $ docker stop goofy_panini
+goofy_panini
 @adlynadika ➜ /workspaces/OSProject (main) $ docker ps -a
-CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS                       PORTS     NAMES
-0733780a13b4   debian    "bash"    4 minutes ago   Exited (137) 6 seconds ago             loving_lamarr
-@adlynadika ➜ /workspaces/OSProject (main) $ docker restart loving_lamarr
-loving_lamarr
+CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS                        PORTS     NAMES
+83193b1a6b97   debian    "bash"    7 minutes ago   Exited (137) 10 seconds ago             goofy_panini
+@adlynadika ➜ /workspaces/OSProject (main) $ docker restart goofy_panini
+goofy_panini
+@adlynadika ➜ /workspaces/OSProject (main) $ docker exec -i -t goofy_panini /bin/bash
+root@83193b1a6b97:/# cd /root
+root@83193b1a6b97:~# ls
+helloworld.txt
+root@83193b1a6b97:~# cat helloworld.txt
+Hello world!
+root@83193b1a6b97:~# exit
+exit
+@adlynadika ➜ /workspaces/OSProject (main) $ docker stop goofy_panini
+goofy_panini
+@adlynadika ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                        PORTS     NAMES
+83193b1a6b97   debian    "bash"    18 minutes ago   Exited (137) 13 seconds ago             goofy_panini
 ```
 
 7. Stop the container and delete the container. What happened to your helloworld.txt?
