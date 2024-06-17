@@ -120,8 +120,16 @@ CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NA
 
 3. Keep note of the name used by your container, this is usually given random names unless you specify your own name. Now run a bash command on the container. Make sure you use the name of your container instead of the one shown here. 
 ```bash
-@adlynadika ➜ /workspaces/OSProject (main) $ docker run --detach -it debian
-0733780a13b47e582a687ecb19071a7da49c92e1ab762abb85e6f33b84a03319
+@adlynadika ➜ /workspaces/OSProject (main) $ docker exec -i -t goofy_panini /bin/bash
+root@83193b1a6b97:/# apt-get update
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8786 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [160 kB]
+Fetched 9214 kB in 1s (9206 kB/s)                        
+Reading package lists... Done
 ```
 
 4. Create a file on the container. First you must make sure you are in the bash command prompt of the container. The container is new, and does not have any software other than the debian OS. To create a new file, you will need an editor installed. In the bash shell of the container, run the package manager apt-get to install nano text editor. 
