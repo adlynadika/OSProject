@@ -135,17 +135,7 @@ Reading package lists... Done
 4. Create a file on the container. First you must make sure you are in the bash command prompt of the container. The container is new, and does not have any software other than the debian OS. To create a new file, you will need an editor installed. In the bash shell of the container, run the package manager apt-get to install nano text editor. 
 
 ```bash
-root@0733780a13b4:/# apt-get update
-Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8786 kB]
-Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
-Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [160 kB]
-Fetched 9214 kB in 1s (7723 kB/s)
-Reading package lists... Done     
-
-root@0733780a13b4:/# apt-get install nano
+root@83193b1a6b97:/# apt-get install nano
 Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
@@ -162,7 +152,7 @@ Do you want to continue? [Y/n] Y
 Get:1 http://deb.debian.org/debian bookworm/main amd64 libncursesw6 amd64 6.4-4 [134 kB]
 Get:2 http://deb.debian.org/debian bookworm/main amd64 nano amd64 7.2-1 [689 kB]
 Get:3 http://deb.debian.org/debian bookworm/main amd64 libgpm2 amd64 1.20.7-10+b1 [14.2 kB]
-Fetched 837 kB in 0s (4458 kB/s)
+Fetched 837 kB in 0s (3239 kB/s)
 debconf: delaying package configuration, since apt-utils is not installed
 Selecting previously unselected package libncursesw6:amd64.
 (Reading database ... 6090 files and directories currently installed.)
@@ -180,10 +170,6 @@ Setting up nano (7.2-1) ...
 update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
 update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
 Processing triggers for libc-bin (2.36-9+deb12u7) ...
-
-root@f65be1987f84:~# cd /root
-
-root@f65be1987f84:~# nano helloworld.txt
 ```
 
 5. Edit your helloworld.txt, create your messsage and save by typing ctrl-X. Once saved, explore using the container to see where the file is located. Then exit the shell, by typing **exit**.
