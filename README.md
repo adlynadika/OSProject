@@ -114,8 +114,8 @@ docker.io/library/debian:latest
 2. This will run the debian container. To check if the debian container is running, type
 ```bash
 @adlynadika ➜ /workspaces/OSProject (main) $ docker ps -a
-CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAMES
-0733780a13b4   debian    "bash"    9 seconds ago   Up 8 seconds             loving_lamarr
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
+83193b1a6b97   debian    "bash"    29 seconds ago   Up 27 seconds             goofy_panini
 ```
 
 3. Keep note of the name used by your container, this is usually given random names unless you specify your own name. Now run a bash command on the container. Make sure you use the name of your container instead of the one shown here. 
