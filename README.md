@@ -186,7 +186,8 @@ root@83193b1a6b97:~# exit
 exit
 ```
 
-6. Stop the container and run **docker ps -a**, and restart the container again. Is your file in the container still available?
+6. Stop the container and run **docker ps -a**, and restart the container again. Is your file in the container still available?<br />
+Answer: Yes, the file is still available
 ```bash 
 @adlynadika ➜ /workspaces/OSProject (main) $ docker stop goofy_panini
 goofy_panini
