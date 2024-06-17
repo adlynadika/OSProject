@@ -267,11 +267,11 @@ root@45dfee71646b:~# ls -1 /root/helloNice.txt
 The output /root/helloNice.txt can be broken down as follows:
 /root/helloNice.txt: This is the path to the file.
 Therefore, based on the provided information:
-User: root
-Group: root
-The file helloNice.txt is owned by the root user and belongs to the root group within the Docker container.
+<br>User: root
+<br>Group: root
+<br>The file helloNice.txt is owned by the root user and belongs to the root group within the Docker container.
 
-2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
+2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. <br>***(2 mark)***
 ```bash
 //use sudo and chown
 sudo chown -R codespace:codespace myroot
