@@ -104,11 +104,12 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
 @adlynadika ➜ /workspaces/OSProject (main) $ docker pull debian
 Using default tag: latest
 latest: Pulling from library/debian
+fea1432adf09: Pull complete 
 Digest: sha256:a92ed51e0996d8e9de041ca05ce623d2c491444df6a535a566dabd5cb8336946
-Status: Image is up to date for debian:latest
+Status: Downloaded newer image for debian:latest
 docker.io/library/debian:latest
 @adlynadika ➜ /workspaces/OSProject (main) $ docker run --detach -it debian
-0733780a13b47e582a687ecb19071a7da49c92e1ab762abb85e6f33b84a03319
+83193b1a6b9779aafbcd1fb881071044a0d941b214f44db4f6aafc454ecc9ced
 ```
 2. This will run the debian container. To check if the debian container is running, type
 ```bash
