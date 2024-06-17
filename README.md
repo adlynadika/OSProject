@@ -245,8 +245,11 @@ At the terminal, create a new directory called **myroot**, and run a instance of
 @adlynadika ➜ /workspaces/OSProject (main) $ cd myroot/
 @adlynadika ➜ /workspaces/OSProject/myroot (main) $ pwd
 /workspaces/OSProject/myroot
-@adlynadika ➜ /workspaces/OSProject/myroot (main) $ docker run --detach -it -v/workspaces/OSProject/myroot/myroot:/root debian
-a66c3c22a4af1c448b6dfca31eb7345f443e7a0ab36e6d09b872e981ff57e4b4
+@adlynadika ➜ /workspaces/OSProject/myroot (main) $ docker run --detach -it -v /workspaces/OSProject/myroot/myroot:/root debian
+45dfee71646b59187d9cd9f1583d5a0b8a7bc31517123abf98f9441690bc9246
+@adlynadika ➜ /workspaces/OSProject/myroot (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
+45dfee71646b   debian    "bash"    10 seconds ago   Up 10 seconds             boring_dewdney
 ```
 
 ***Questions:***
