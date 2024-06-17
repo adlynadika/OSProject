@@ -98,28 +98,77 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
 ## Running your own container instance.
 
 1. At the terminal, run a linux instance. By typing the following command. 
-```
-docker pull debian
-docker run --detach -it debian
+```bash
+@adlynadika ➜ /workspaces/OSProject (main) $ docker pull debian
+Using default tag: latest
+latest: Pulling from library/debian
+Digest: sha256:a92ed51e0996d8e9de041ca05ce623d2c491444df6a535a566dabd5cb8336946
+Status: Image is up to date for debian:latest
+docker.io/library/debian:latest
+@adlynadika ➜ /workspaces/OSProject (main) $ docker run --detach -it debian
+0733780a13b47e582a687ecb19071a7da49c92e1ab762abb85e6f33b84a03319
 ```
 2. This will run the debian container. To check if the debian container is running, type
 ```bash
-@joeynor ➜ /workspaces/OSProject (main) $ docker ps -a
+@adlynadika ➜ /workspaces/OSProject (main) $ docker ps -a
 CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAMES
-f65be1987f84   debian    "bash"    4 minutes ago   Up 4 minutes             romantic_jackson
+0733780a13b4   debian    "bash"    9 seconds ago   Up 8 seconds             loving_lamarr
 ```
 
 3. Keep note of the name used by your container, this is usually given random names unless you specify your own name. Now run a bash command on the container. Make sure you use the name of your container instead of the one shown here. 
 ```bash
-docker exec -i -t romantic_jackson /bin/bash
+@adlynadika ➜ /workspaces/OSProject (main) $ docker run --detach -it debian
+0733780a13b47e582a687ecb19071a7da49c92e1ab762abb85e6f33b84a03319
 ```
 
 4. Create a file on the container. First you must make sure you are in the bash command prompt of the container. The container is new, and does not have any software other than the debian OS. To create a new file, you will need an editor installed. In the bash shell of the container, run the package manager apt-get to install nano text editor. 
 
 ```bash
-root@f65be1987f84:~# apt-get update      
+root@0733780a13b4:/# apt-get update
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8786 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [160 kB]
+Fetched 9214 kB in 1s (7723 kB/s)
+Reading package lists... Done     
 
-root@f65be1987f84:~# apt-get install nano
+root@0733780a13b4:/# apt-get install nano
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libgpm2 libncursesw6
+Suggested packages:
+  gpm hunspell
+The following NEW packages will be installed:
+  libgpm2 libncursesw6 nano
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 837 kB of archives.
+After this operation, 3339 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://deb.debian.org/debian bookworm/main amd64 libncursesw6 amd64 6.4-4 [134 kB]
+Get:2 http://deb.debian.org/debian bookworm/main amd64 nano amd64 7.2-1 [689 kB]
+Get:3 http://deb.debian.org/debian bookworm/main amd64 libgpm2 amd64 1.20.7-10+b1 [14.2 kB]
+Fetched 837 kB in 0s (4458 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libncursesw6:amd64.
+(Reading database ... 6090 files and directories currently installed.)
+Preparing to unpack .../libncursesw6_6.4-4_amd64.deb ...
+Unpacking libncursesw6:amd64 (6.4-4) ...
+Selecting previously unselected package nano.
+Preparing to unpack .../archives/nano_7.2-1_amd64.deb ...
+Unpacking nano (7.2-1) ...
+Selecting previously unselected package libgpm2:amd64.
+Preparing to unpack .../libgpm2_1.20.7-10+b1_amd64.deb ...
+Unpacking libgpm2:amd64 (1.20.7-10+b1) ...
+Setting up libgpm2:amd64 (1.20.7-10+b1) ...
+Setting up libncursesw6:amd64 (6.4-4) ...
+Setting up nano (7.2-1) ...
+update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+Processing triggers for libc-bin (2.36-9+deb12u7) ...
 
 root@f65be1987f84:~# cd /root
 
@@ -130,25 +179,26 @@ root@f65be1987f84:~# nano helloworld.txt
 
 6. Stop the container and run **docker ps -a**, and restart the container again. Is your file in the container still available?
 ```bash 
-@joeynor ➜ /workspaces/OSProject (main) $ docker stop romantic_jackson
-
-@joeynor ➜ /workspaces/OSProject (main) $ docker ps -a
-CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                        PORTS     NAMES
-f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago             romantic_jackson
-
-@joeynor ➜ /workspaces/OSProject (main) $ docker restart romantic_jackson
+@adlynadika ➜ /workspaces/OSProject (main) $ docker stop loving_lamarr
+loving_lamarr
+@adlynadika ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS                       PORTS     NAMES
+0733780a13b4   debian    "bash"    4 minutes ago   Exited (137) 6 seconds ago             loving_lamarr
+@adlynadika ➜ /workspaces/OSProject (main) $ docker restart loving_lamarr
+loving_lamarr
 ```
 
 7. Stop the container and delete the container. What happened to your helloworld.txt?
 
 ```bash 
-@joeynor ➜ /workspaces/OSProject (main) $ docker stop romantic_jackson
-
-@joeynor ➜ /workspaces/OSProject (main) $ docker ps -a
-CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                        PORTS     NAMES
-f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago             romantic_jackson
-
-@joeynor ➜ /workspaces/OSProject (main) $ docker rm romantic_jackson
+@adlynadika ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS                            PORTS     NAMES
+0733780a13b4   debian    "bash"    8 minutes ago   Exited (137) About a minute ago             loving_lamarr
+@adlynadika ➜ /workspaces/OSProject (main) $ docker rm loving_lamarr
+loving_lamarr
+@adlynadika ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+@adlynadika ➜ /workspaces/OSProject (main) $
 ```
 
 ***Questions:***
@@ -177,8 +227,7 @@ At the terminal, create a new directory called **myroot**, and run a instance of
 1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** __Fill answer here__.
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
-//use sudo and chown
-sudo chown -R codespace:codespace myroot
+
 
 ```
 *** __Fill answer here__.***
