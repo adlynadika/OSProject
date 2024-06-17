@@ -210,7 +210,8 @@ CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                      
 83193b1a6b97   debian    "bash"    18 minutes ago   Exited (137) 13 seconds ago             goofy_panini
 ```
 
-7. Stop the container and delete the container. What happened to your helloworld.txt?
+7. Stop the container and delete the container. What happened to your helloworld.txt?<br />
+Answer: The modifications done inside the container including the generation of helloworld.txt will be erased once the container being stop and deleted
 
 ```bash 
 @adlynadika ➜ /workspaces/OSProject (main) $ docker stop goofy_panini
