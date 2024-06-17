@@ -230,10 +230,11 @@ Error response from daemon: No such container: goofy_panini
 
 ***Questions:***
 
-1. Are files in the container persistent. Why not?. ***(1 mark)*** <br />
+1. Are files in the container persistent. Why not? <br> ***(1 mark)*** <br />
 No, files in a container are not persistent because containers reset every time they run. The container file systems are isolated from the host system. When a container is removed, any changes made to its file system are lost. 
-2. Can we run two, or three instances of debian linux? . ***(1 mark)*** <br />
-Yes.
+
+2. Can we run two, or three instances of debian linux? ***(1 mark)*** <br />
+Yes, it is possible to run two or three instances of Debian Linux in different containers. 
 ## Running your own container with persistent storage
 
 1. In the previous experiment, you might have notice that containers are not persistent. To make storage persistent, you will need to mount them. 
