@@ -173,6 +173,18 @@ Processing triggers for libc-bin (2.36-9+deb12u7) ...
 ```
 
 5. Edit your helloworld.txt, create your messsage and save by typing ctrl-X. Once saved, explore using the container to see where the file is located. Then exit the shell, by typing **exit**.
+```bash 
+root@83193b1a6b97:/# cd /root
+root@83193b1a6b97:~# nano helloworld.txt
+root@83193b1a6b97:~# pwd
+/root
+root@83193b1a6b97:~# find / -name helloworld.txt
+/root/helloworld.txt
+root@83193b1a6b97:~# ls
+helloworld.txt
+root@83193b1a6b97:~# exit
+exit
+```
 
 6. Stop the container and run **docker ps -a**, and restart the container again. Is your file in the container still available?
 ```bash 
