@@ -153,7 +153,7 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 ***Questions:***
 
-1. Are files in the container persistent. Why not?. ***(1 mark)***
+1. Are files in the container persistent. Why not?. ***(1 mark)*** <br />
 No, files in a container are not persistent because containers reset every time they run.
 2. Can we run two, or three instances of debian linux? . ***(1 mark)*** __Fill answer here__.
 
