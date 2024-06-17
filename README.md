@@ -213,14 +213,17 @@ CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                      
 7. Stop the container and delete the container. What happened to your helloworld.txt?
 
 ```bash 
+@adlynadika ➜ /workspaces/OSProject (main) $ docker stop goofy_panini
+goofy_panini
 @adlynadika ➜ /workspaces/OSProject (main) $ docker ps -a
-CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS                            PORTS     NAMES
-0733780a13b4   debian    "bash"    8 minutes ago   Exited (137) About a minute ago             loving_lamarr
-@adlynadika ➜ /workspaces/OSProject (main) $ docker rm loving_lamarr
-loving_lamarr
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                            PORTS     NAMES
+83193b1a6b97   debian    "bash"    19 minutes ago   Exited (137) About a minute ago             goofy_panini
+@adlynadika ➜ /workspaces/OSProject (main) $ docker rm goofy_panini
+goofy_panini
 @adlynadika ➜ /workspaces/OSProject (main) $ docker ps -a
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-@adlynadika ➜ /workspaces/OSProject (main) $
+@adlynadika ➜ /workspaces/OSProject (main) $ docker exec -i -t goofy_panini /bin/bash
+Error response from daemon: No such container: goofy_panini
 ```
 
 ***Questions:***
