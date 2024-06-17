@@ -214,12 +214,12 @@ At the terminal, create a new directory called **myroot**, and run a instance of
 2. Create a file in /root on the container, the files should also appear in myroot of your host VM.
 
 ```bash 
-@joeynor ➜ /workspaces/OSProject (main) $ mkdir myroot
-@joeynor ➜ /workspaces/OSProject (main) $ cd myroot/
-@joeynor ➜ /workspaces/OSProject/myroot (main) $ pwd
+@adlynadika ➜ /workspaces/OSProject (main) $ mkdir myroot
+@adlynadika ➜ /workspaces/OSProject (main) $ cd myroot/
+@adlynadika ➜ /workspaces/OSProject/myroot (main) $ pwd
 /workspaces/OSProject/myroot
-
-@joeynor ➜ /workspaces/OSProject/myroot (main) $ docker run --detach -it -v /workspaces/OSProject/myroot:/root debian
+@adlynadika ➜ /workspaces/OSProject/myroot (main) $ docker run --detach -it -v/workspaces/OSProject/myroot/myroot:/root debian
+a66c3c22a4af1c448b6dfca31eb7345f443e7a0ab36e6d09b872e981ff57e4b4
 ```
 
 ***Questions:***
