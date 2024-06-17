@@ -2,6 +2,8 @@
 
 Group Name: Powerpuff GG. 
 
+Name: Adlyn Sofea Binti Mohd Ariff Adika 2214042
+
 Section: 1
 
 Team Mates:
